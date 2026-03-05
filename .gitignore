@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.slack_tokens.env
+credentials.json
+users_cache.json
+venv/
+.venv/
+dist/
+*.egg-info/
