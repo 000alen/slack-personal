@@ -10,14 +10,16 @@ Extracts your `xoxc-` session token and `xoxd-` cookie from the Slack desktop ap
 
 ```bash
 # 1. Close Slack desktop app
-# 2. Run setup (installs deps via uv, extracts tokens)
+# 2. Run setup (installs deps via uv, auto-extracts tokens from desktop app)
 bash scripts/setup.sh
 ```
 
-Or manually:
+uv automatically manages Python 3.11 (needed for native deps). No system Python required.
+
+Alternative auth methods:
 ```bash
-uv sync
-uv run sg auth --manual  # paste tokens from browser DevTools
+uv run sg auth --browser  # guided browser DevTools extraction
+uv run sg auth --manual   # paste tokens directly
 ```
 
 ## Usage
@@ -33,6 +35,10 @@ uv run sg export C0123ABCD --since 7d -o chat.md  # export
 ## OpenClaw Skill
 
 Install as a skill to give your agent access to your Slack workspace.
+
+## Token refresh
+
+Desktop extraction is fast (~1s) and non-interactive. If your token expires, just close Slack and re-run `uv run sg auth`. Session typically lasts months.
 
 ## ⚠️ Note
 

@@ -347,19 +347,14 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
-]
-
-[package.optional-dependencies]
-desktop = [
     { name = "slacktokens" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "httpx", specifier = ">=0.27" },
-    { name = "slacktokens", marker = "extra == 'desktop'", specifier = ">=0.2" },
+    { name = "slacktokens", specifier = ">=0.2" },
 ]
-provides-extras = ["desktop"]
 
 [[package]]
 name = "slacktokens"

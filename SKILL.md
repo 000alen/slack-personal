@@ -12,9 +12,11 @@ Personal Slack workspace access via extracted session tokens (`xoxc-` + `xoxd-`)
 One-time: `bash scripts/setup.sh`
 
 Three auth methods:
-1. **Auto-extract** from Slack desktop app (macOS/Linux, app must be closed)
+1. **Auto-extract** from Slack desktop app — default, zero interaction (macOS/Linux, app must be closed)
 2. **Browser extraction** (guided DevTools steps)
 3. **Manual paste** (if you already have tokens)
+
+uv pins Python 3.11 automatically (needed for slacktokens LevelDB dep).
 
 Credentials stored at `~/.config/slack-personal/credentials.json` (mode 600).
 
